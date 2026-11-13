@@ -1,0 +1,147 @@
+/*
+ PITCHLAB EDITING FILE
+ Edit page titles, descriptions, cards, and Element A research below.
+ Keep the page keys unchanged so the navigation continues to work.
+ The main index.html loads this file automatically.
+*/
+window.PitchLabContent = (() => {
+const pages = {
+ home: {eyebrow:"Capstone project · Planning & research", title:"PitchLab", intro:"PitchLab is a three-wheel pitching machine project focused on controlling baseball spin. Our goal is to develop a design that helps players practice more consistently without always needing another player to throw batting practice. This site tracks our research, design decisions, prototype, and testing.", cards:[
+  ["01","The Problem","High school players can struggle to get consistent extra batting practice when a thrower is unavailable or pitchers need to limit their pitch counts."],
+  ["02","Our Design Direction","A three-wheel pitching machine concept intended to control the spin of a baseball. Design details will be refined through research and testing."],
+  ["03","Our Priorities","Consistent practice, independent access to batting practice, and controllable ball spin are equally important project goals."]
+ ], visual:true},
+ problem:{eyebrow:"Element A",title:"What Is the Problem?",intro:"The PitchLab team is investigating whether Ridge Point baseball players have enough access to consistent extra batting practice during team sessions and individual practice. The team has identified possible barriers—needing a thrower, inconsistent pitch delivery, pitcher workload limits, and access to spin practice—but has not yet measured how often these occur locally."},
+ solutions:{eyebrow:"Element B",title:"Researching Existing Solutions",intro:"Compare patented pitching-machine designs and commercial products to identify the features, trade-offs, and design opportunities that can guide PitchLab."},
+ requirements:{eyebrow:"Element C",title:"Defining Requirements",intro:"Define measurable success criteria for the three-wheel pitching machine. Consider repeatable ball delivery, controllable spin, safe operation, reliable construction, ease of setup, and budget. Specific numerical targets should be set after research and available-resource checks."},
+ proposal:{eyebrow:"Project Proposal",title:"Project Proposal",intro:"This section is reserved for the proposed project scope, goals, resources, and intended outcome."},
+ brainstorm:{eyebrow:"Element D",title:"Brainstorming a Solution",intro:"The current concept uses three wheels to influence baseball spin. Add sketches, wheel-layout alternatives, motor and power ideas, adjustment mechanisms, and a decision matrix as the team develops and compares options. No team sketch has been created yet."},
+ stem:{eyebrow:"Element E",title:"STEM Principles of the Project",intro:"Potential STEM topics include friction between the wheels and ball, rotational motion and angular velocity, motor speed control, electrical power, mechanical structure, and measurement of launch speed and spin. Document the calculations and principles that the final design actually uses."},
+ viability:{eyebrow:"Element F",title:"Design Viability",intro:"Evaluate whether the design can be built with available time, tools, materials, and budget. Include a cost estimate, safe guarding around moving wheels, stable mounting, ball-feed considerations, and the trade-offs between adjustability, complexity, and reliability."},
+ review:{eyebrow:"Design Proposal",title:"Preliminary Design Review",intro:"This section is reserved for the preliminary design, supporting evidence, and review feedback."},
+ prototype:{eyebrow:"Element G",title:"Construction of a Testable Prototype",intro:"This section is reserved for build steps, materials, CAD, photos, and prototype revisions."},
+ "testing-plan":{eyebrow:"Element H",title:"Prototype Testing & Data Collection Plan",intro:"This section is reserved for test procedures, variables, equipment, data tables, and safety steps."},
+ analysis:{eyebrow:"Element I",title:"Testing, Data Collection & Analysis",intro:"This section is reserved for actual results, graphs, observations, and conclusions from testing."},
+ evaluation:{eyebrow:"Element J",title:"Documentation of External Evaluation",intro:"This section is reserved for evaluator feedback, evaluation criteria, and responses to recommendations."},
+ reflection:{eyebrow:"Element K",title:"Designer Reflection",intro:"This section is reserved for lessons learned, challenges, teamwork, and how the design process changed."},
+ recommendations:{eyebrow:"Element L",title:"Designer’s Recommendations",intro:"This section is reserved for final recommendations, possible improvements, and next steps."},
+ presentation:{eyebrow:"Element M",title:"Project & Project Portfolio",intro:"This section is reserved for the final presentation, project summary, and portfolio materials."},
+ writing:{eyebrow:"Element N",title:"Writing Like an Engineer",intro:"This section is reserved for technical writing, calculations, design notes, and engineering documentation."}
+};
+
+ const problemContent = `
+  <section class="research-panel">
+    <h3>1. Problem statement</h3>
+    <p>When a high school baseball player wants extra batting practice, the session may depend on a teammate or coach being available to throw. If the thrower cannot deliver repeatable pitches, or if a pitcher needs to limit throwing workload, the batter may have fewer opportunities to practice against consistent pitch locations and different spin types. PitchLab will investigate whether a three-wheel machine with independently adjustable wheel speeds can provide repeatable delivery and controllable spin for team practice and individual practice.</p>
+  </section>
+  <section class="research-panel">
+    <h3>2. Background and context</h3>
+    <p><strong>Where/when:</strong> During organized team practice and during additional individual or at-home practice, when a suitable thrower is not available or repeatable pitches are difficult to obtain.</p>
+    <p><strong>Who is affected:</strong> The team’s high school baseball players, especially batters seeking extra repetitions and pitchers whose throwing workload must be managed.</p>
+    <p><strong>Why it matters:</strong> A pitching machine may provide repeatable practice pitches and reduce the need for a live thrower for some drills. Research describes three-wheel systems as capable of changing ball spin by changing the relative speeds of the wheels. This supports technical feasibility, but does not prove that PitchLab’s future design will meet its goals.</p>
+  </section>
+  <section class="research-panel">
+    <h3>3. Evidence and statistics</h3>
+    <div class="evidence-grid">
+      <article class="evidence-card"><div class="evidence-number">0–110</div><h4>Official game-pitch range</h4><p>UIL’s high-school baseball chart sets required rest based on official game pitches, up to 110 in a day. For example, 66–85 pitches require 3 days’ rest and 86–110 require 4 days’ rest. These are game-pitch rules—not evidence that a particular team is short of batting practice.</p><a href="https://www.uiltexas.org/baseball/manual/baseball" target="_blank" rel="noopener">Source: UIL Baseball Manual</a></article>
+      <article class="evidence-card"><div class="evidence-number">46 players</div><h4>Published batting-practice study</h4><p>Kohmura and colleagues studied 46 participants across 12 training sessions over four weeks. Some groups improved batting-test performance for the pitch type and speed they practiced. The study supports targeted practice, but it does not prove every machine or every training program improves game performance.</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6942478/" target="_blank" rel="noopener">Source: Kohmura et al. (2019)</a></article>
+      <article class="evidence-card"><div class="evidence-number">140 pitchers</div><h4>Pitcher injury risk study</h4><p>Olsen and colleagues compared 95 adolescent pitchers who had shoulder or elbow surgery with 45 who had not experienced a significant pitching injury. The injured group reported more pitching months, games, innings, pitches, and more pitching with arm pain or fatigue. This is an association study, not proof that every extra pitch causes an injury.</p><a href="https://pubmed.ncbi.nlm.nih.gov/16452269/" target="_blank" rel="noopener">Source: Olsen et al. (2006)</a></article>
+      <article class="evidence-card"><div class="evidence-number">3 wheels</div><h4>Engineering feasibility study</h4><p>Sakai and colleagues described a three-roller machine with independently controlled rollers that could produce different ball rotations and breaking pitches. Their experimental machine reported speed error below about 3% and distance error around 0.15 m. These are results for that research prototype, not PitchLab.</p><a href="https://www.jstage.jst.go.jp/article/jsdd/1/4/1_4_682/_article/-char/en" target="_blank" rel="noopener">Source: Sakai et al. (2007)</a></article>
+    </div>
+  </section>
+  <section class="research-panel">
+    <h3>4. Validation status</h3>
+    <p><span class="status-chip">Research support found</span> Published engineering research and existing products show that wheel-based pitching machines can deliver different pitches and control spin through wheel-speed adjustments. UIL rules independently confirm that high-school pitchers have game-pitch limits and required rest periods.</p>
+    <p><span class="status-chip status-pending">Local validation not completed</span> The team has not yet conducted a survey or interviews. Therefore, the team’s claims that throwers are often unavailable, throws are inconsistent, and access is limited remain team observations/hypotheses—not verified survey findings.</p>
+    <p><strong>Recommended next validation step:</strong> Ask teammates and the coach the same neutral questions: (1) How often do you want extra batting practice outside scheduled team practice? (2) What usually prevents it? (3) How consistent is the pitch location from the available thrower or machine? (4) Which pitch spins would you want to practice? Record the number of respondents and answers; report the results honestly, including responses that do not support the idea.</p>
+  </section>
+  <section class="research-panel">
+    <h3>5. What the research supports—and what it does not</h3>
+    <ul>
+      <li><strong>Support for controlled practice:</strong> Kohmura et al. (2019) found that batting practice focused on specific pitch types and speeds improved performance on some matching batting tests. This supports investigating repeatable pitches and adjustable spin, but does not guarantee that PitchLab will improve game performance.</li>
+      <li><strong>Important limitation:</strong> Kuo et al. (2021) studied four professional players and found that their batting movement patterns differed when facing a pitching machine versus a live pitcher. The authors cautioned against extensive reliance on machines because the machine did not provide the same full-body visual cues as a pitcher. PitchLab should be presented as a supplement to—not a replacement for—live pitching and game-like practice.</li>
+      <li><strong>Arm workload evidence:</strong> Olsen et al. (2006) found associations between injury history and several workload measures, including pitches per game/year and pitching while fatigued or in pain. This supports protecting pitchers’ workloads; it does not establish that pitch-count rules alone cause a lack of hitting practice.</li>
+      <li><strong>Physics background:</strong> Adair’s <em>The Physics of Baseball</em> explains how spin, drag, and the Magnus effect influence a ball’s flight. It is useful background for the design, but it is not a local survey or evidence that Ridge Point players experience the identified access problem.</li>
+    </ul>
+  </section>
+  <section class="research-panel">
+    <h3>6. Stakeholders</h3>
+    <ul>
+      <li><strong>Primary:</strong> Ridge Point High School baseball players who want repeatable batting practice, including hitters working on pitch recognition and spin.</li>
+      <li><strong>Team stakeholders:</strong> Coaches who organize practice, manage player workload, and supervise machine use.</li>
+      <li><strong>Safety stakeholders:</strong> Machine operators, nearby players, and anyone in the batting-practice area; guarding, stable mounting, and safe operating procedures will be essential.</li>
+      <li><strong>Project stakeholders:</strong> The PitchLab team and school staff overseeing the engineering capstone.</li>
+    </ul>
+  </section>
+  <section class="research-panel">
+    <h3>7. Existing products and patented solutions</h3>
+    <div class="product-comparison">
+      <article><h4>Live pitching, batting tee, and soft toss</h4><p>These are low-cost or already available alternatives. Live pitching provides pitcher-motion cues but requires a thrower and uses that person’s throwing workload. A tee supports solo repetitions but does not deliver a moving pitch or changing spin.</p><a href="https://www.mlb.com/pitchsmart" target="_blank" rel="noopener">MLB/USA Baseball Pitch Smart</a></article>
+      <article><h4>Louisville Slugger Blue Flame</h4><p>The team’s product research describes this as a low-cost, manually fed machine suited to T-ball and coach-pitch use. Because a person still feeds each ball and pitch variety is limited, it may not fully address independent practice or adjustable spin. The price range in the team’s notes ($149–$189) is an older estimate, not a verified current price.</p><a href="https://www.slugger.com/" target="_blank" rel="noopener">Louisville Slugger official site</a></article>
+      <article><h4>Sports Attack Junior Hack Attack</h4><p>The team’s research notes describe a three-wheel machine capable of more consistent pitches, with solo operation dependent on a separate feeder/accessory in the reviewed configuration. The cited approximate $2,600 price is a research-note estimate and may be outdated. This product is a close competitor for repeatable pitch delivery.</p><a href="https://attackmachines.com/baseball" target="_blank" rel="noopener">Sports Attack baseball machines</a></article>
+      <article><h4>JUGS BP1</h4><p>The current manufacturer page lists a 15–70 mph range, a digital speed readout, and a 360° swivel base. JUGS also lists a compatible optional feeder. It is a useful example of a durable team machine, but speed control alone does not establish the independent three-wheel spin control PitchLab is exploring. Current manufacturer listing is around $1,945; prices can change.</p><a href="https://jugssports.com/products/bp1-baseball-only-pitching-machine.html" target="_blank" rel="noopener">JUGS official product page</a></article>
+      <article><h4>Spinball Three Wheel</h4><p>The manufacturer advertises direct speed and spin settings and a 40–100 mph baseball range. This is one of the closest commercial comparisons to PitchLab’s three-wheel, spin-control goal.</p><a href="https://www.spinballsports.com/spinball-3-wheel" target="_blank" rel="noopener">Spinball official product page</a></article>
+      <article><h4>Trajekt Arc robotic pitcher</h4><p>The team’s research identifies this as a high-end system designed to recreate pitcher visuals and release angles. Reported lease prices in the team’s notes are very high and should be rechecked before quoting. It demonstrates the trade-off between realistic pitcher cues and affordability/complexity.</p><a href="https://www.espn.com/mlb/story/_/id/40401564/trajekt-arc-new-technology-controversy-mlb-hitters-pitchers-advantage" target="_blank" rel="noopener">ESPN report</a></article>
+    </div>
+    <p><strong>Patent examples:</strong> U.S. Patent US9180355B1 describes a three-wheel pitching head with separate motors; changing relative wheel speeds can change spin and trajectory. International patent application WO2021051196A1 describes a three-wheel arrangement with independent wheel speeds to control output velocity and spin. These are examples of existing intellectual property, not proof that PitchLab’s concept is novel or that the team can freely commercialize it. The project should focus on a school prototype and review the patent claims before making novelty or freedom-to-operate claims.</p>
+    <p><a href="https://patents.google.com/patent/US9180355B1/en" target="_blank" rel="noopener">US9180355B1 on Google Patents</a> · <a href="https://patents.google.com/patent/WO2021051196A1/en" target="_blank" rel="noopener">WO2021051196A1 on Google Patents</a> · <a href="https://jugssports.com/pages/patents.html" target="_blank" rel="noopener">JUGS official patent list</a></p>
+  </section>
+  <section class="research-panel">
+    <h3>8. Cause-and-effect summary</h3>
+    <div class="causal-flow"><div>Thrower unavailable, inconsistent delivery, or pitcher workload limits</div><span>↓ may lead to</span><div>Fewer opportunities for repeatable extra batting practice</div><span>↓ proposed design response</span><div>Three independently adjustable wheels to test repeatable delivery and different spin types</div></div>
+  </section>
+  <section class="research-panel">
+    <h3>9. Why this problem is worth solving</h3>
+    <p>A successful design could give the team a repeatable way to run selected batting drills when a live thrower is unavailable, allow practice with different spin settings, and reduce dependence on a teammate for every repetition. The prototype should be judged against measurable requirements such as pitch-to-pitch location spread, repeatability of wheel settings, spin type achieved, setup time, cost, and safe operation. The team should not claim improved batting performance unless it is measured.</p>
+  </section>
+  <section class="research-panel">
+    <h3>10. References (APA style)</h3>
+    <ol class="references">
+      <li>Adair, R. K. (2002). <em>The physics of baseball</em> (3rd ed.). HarperCollins.</li>
+      <li>Attack Machines. (n.d.). <em>Baseball pitching machines</em>. https://attackmachines.com/baseball</li>
+      <li>Kohmura, Y., Nakata, M., Kubota, A., Aoba, Y., Aoki, K., &amp; Murakami, S. (2019). Effects of batting practice and visual training focused on pitch type and speed on batting ability and visual function. <em>Journal of Human Kinetics, 70</em>, 5–13. https://doi.org/10.2478/hukin-2019-0034</li>
+      <li>Kuo, S.-Y., Cheng, K. B., &amp; Lee, Y.-C. (2021). Differences in baseball batting movement patterns between facing a pitcher and a pitching machine. <em>Research Quarterly for Exercise and Sport, 92</em>(3), 420–428. https://doi.org/10.1080/02701367.2020.1741499</li>
+      <li>Olsen, S. J., II, Fleisig, G. S., Dun, S., Loftice, J., &amp; Andrews, J. R. (2006). Risk factors for shoulder and elbow injuries in adolescent baseball pitchers. <em>The American Journal of Sports Medicine, 34</em>(6), 905–912. https://doi.org/10.1177/0363546505284188</li>
+      <li>Sakai, S., Oda, J., Yonemura, S., Kawata, K., Horikawa, S., &amp; Yamamoto, H. (2007). Research on the development of baseball pitching machine controlling pitch type using neural network. <em>Journal of System Design and Dynamics, 1</em>(4), 682–690. https://doi.org/10.1299/jsdd.1.682</li>
+      <li>JUGS Sports. (2024). <em>JUGS Sport baseball catalog: BP³ baseball pitching machine with changeup</em> [Catalog]. https://catalogs.asbsports.com/vendors/pdfs/JUGS_Sport-Baseball-2024.pdf</li>
+      <li>JUGS Sports. (n.d.). <em>Patents</em>. https://jugssports.com/pages/patents.html</li>
+      <li>Sakai, S., &amp; Watanabe, M. (2017). A study on four rollers type baseball pitching machine. <em>Mechanical Engineering Congress, 2017 Japan</em>. https://doi.org/10.1299/jsmemecj.2017.J2310203</li>
+      <li>Spinball Sports. (n.d.). <em>Spinball three wheel pitching machine</em>. https://www.spinballsports.com/spinball-3-wheel</li>
+      <li>Sports Attack, LLC. (n.d.). <em>Hack Attack baseball pitching machine: Owner’s manual</em>. https://s3.amazonaws.com/files.leagueathletics.com/Text/Documents/13834/104488.pdf</li>
+      <li>United States Patent and Trademark Office. (2015). <em>System and method to pitch balls with fine adjustment</em> (U.S. Patent No. 9,180,355 B1). Google Patents. https://patents.google.com/patent/US9180355B1/en</li>
+      <li>University Interscholastic League. (n.d.). <em>Baseball manual: Pitch count implementation</em>. https://www.uiltexas.org/baseball/manual/baseball</li>
+      <li>World Intellectual Property Organization. (2021). <em>Method and system of replicating ball trajectories using an automated ball throwing machine</em> (International Publication No. WO2021051196A1). Google Patents. https://patents.google.com/patent/WO2021051196A1/en</li>
+    </ol>
+  </section>`;
+
+ const solutionsContent = `
+  <section class="research-panel">
+    <h3>1. Research method and mentor input</h3>
+    <p>The PitchLab team reviewed patent records, manufacturer product pages, published engineering information, and the Similar Solution Matrix. The team compared ball type, speed range, pitch variation, spin control, feeding method, portability, cost, and complexity. The matrix provided a consistent way to compare one-, two-, and three-wheel machines with alternative launcher designs.</p>
+    <p><strong>Mentor / expert input:</strong> The mentor’s name and feedback have not yet been documented in the project materials. Add the mentor’s name and specific recommendations after the team completes that review; do not claim a review occurred until it has.</p>
+    <p><strong>What we learned:</strong> Small-ball machines are more affordable and portable, while full-size three-wheel machines offer more pitch and spin control at a much higher price. Patent research confirms that independent wheel-speed control and trajectory adjustment are established design approaches.</p>
+  </section>
+  <section class="research-panel">
+    <h3>2. Patented solutions</h3>
+    <div class="product-comparison">
+      <article><h4>US9180355B1 — System and Method to Pitch Balls with Fine Adjustment</h4><p><strong>Publication date:</strong> November 10, 2015. <strong>Assignee:</strong> Sports Attack, LLC. The patent describes a pitching head with powered wheels and a separate motor for each wheel in its three-wheel embodiment. Varying wheel speeds changes spin and trajectory; a fine-adjustment mechanism changes pitch location.</p><p><strong>Advantages:</strong> Independent wheel control, pitch-location adjustment, visible ball feed, and wheel guards.</p><p><strong>Limitations:</strong> Multiple motors and adjustment hardware add cost and complexity; the described controls require an operator and are not a fully automated pitch-selection system.</p><a href="https://patents.google.com/patent/US9180355B1/en" target="_blank" rel="noopener">Patent record and drawings</a></article>
+      <article><h4>WO2021051196A1 — Method and System of Replicating Ball Trajectories</h4><p><strong>Publication date:</strong> March 25, 2021. <strong>Assignee:</strong> Trajekt Sports Inc. The patent describes a controller-based ball-throwing system. One embodiment uses three independently driven wheels to control launch velocity and three-dimensional spin; other components include ball-orientation handling, cameras or sensors, and feedback control.</p><p><strong>Advantages:</strong> Programmable trajectories, three-dimensional spin control, and feedback to improve repeatability.</p><p><strong>Limitations:</strong> The broader system requires substantially more electronics, sensing, and software than a simple student-built pitching machine.</p><a href="https://patents.google.com/patent/WO2021051196A1/en" target="_blank" rel="noopener">Patent record and drawings</a></article>
+    </div>
+    <p><strong>Additional matrix reference:</strong> US6523535B2, <em>Toy Projectile Launcher</em> (February 25, 2003), was screened but is a less direct comparison because it is a toy launcher rather than a baseball pitching machine. <a href="https://patents.google.com/patent/US6523535B2/en" target="_blank" rel="noopener">Patent record</a>.</p>
+  </section>
+  <section class="research-panel">
+    <h3>3. Competing products</h3>
+    <div class="product-comparison">
+      <article><h4>Personal Pitcher Pro — $249.99</h4><p>Four simulated speeds from 15–95 mph, fastballs and left/right curves, automatic feeder for 48 balls, timing light, rechargeable battery, and a 5 lb machine. <strong>Strengths:</strong> portable, affordable, and suited to solo practice. <strong>Weaknesses:</strong> uses small Wiffle golf balls rather than regulation baseballs and has limited pitch variation compared with an independently controlled three-wheel machine.</p><a href="https://personalpitcher.com/products/personal-pitcher-pro-fastball-curveball-pitching-machine" target="_blank" rel="noopener">Manufacturer page</a></article>
+      <article><h4>JUGS Small-Ball — $395.00</h4><p>Uses 5-inch foam balls, simulates 55–75 mph at 20 feet, throws fastballs and overhand curves, and includes a 25-ball feeder. It weighs 23 lb and uses 110V AC. <strong>Strengths:</strong> solo practice, feeder, foam-ball safety, adjustable legs. <strong>Weaknesses:</strong> requires specific foam balls and AC power; pitch types and spin adjustment are limited.</p><a href="https://jugssports.com/products/small-ball-pitching-machine.html" target="_blank" rel="noopener">Manufacturer page</a></article>
+      <article><h4>Spinball Three Wheel — $3,300.00</h4><p>Advertised for 40–100 mph baseball pitches, with a smart control panel for direct speed and spin settings and adjustable aim. <strong>Strengths:</strong> close technical comparison to PitchLab’s spin-control goal. <strong>Weaknesses:</strong> high commercial price and greater mechanical complexity than a student project can likely reproduce.</p><a href="https://www.spinballsports.com/product-page/spinball-three-wheel-pitching-machine" target="_blank" rel="noopener">Manufacturer page</a></article>
+      <article><h4>Sports Attack Junior Hack Attack — $2,699.00</h4><p>Three variable-speed motors and 14-inch wheels; throws 70+ mph and supports fastballs, curves, sliders, split fingers, and knuckleballs. It weighs about 87 lb and has adjustable elevation and inside/outside pitch location. <strong>Strengths:</strong> full-size baseball use, visible ball release, and three independent speed dials. <strong>Weaknesses:</strong> high price and substantial weight; optional feeder configuration affects independent operation.</p><a href="https://sportsattack.com/product/junior-hack-attack-baseball-pitching-machine/" target="_blank" rel="noopener">Manufacturer product page</a></article>
+    </div>
+  </section>
+  <section class="research-panel">
+    <h3>4. Design takeaways</h3>
+    <p>PitchLab can investigate independently adjustable wheel speeds, a simple and safe ball-feed method, and repeatable speed/spin settings while keeping the build affordable. The prototype should be compared against measurable targets for pitch consistency, spin type, safety, setup time, and cost.</p>
+  </section>`;
+
+ return { pages, problemContent, solutionsContent };
+})();
